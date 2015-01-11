@@ -46,8 +46,33 @@ class ChiselTest < Minitest::Test
   end
 
   def test_words_with_two_asterisks_are_bold
+    skip
     chisel = Chisel.new
     assert_equal "<p>We <strong>have</strong> it</p>", chisel.parse("We **have** it")
+  end
+
+  def test_unordered_list_outputs_correctly
+    chisel = Chisel.new
+    assert_equal "<ul><li>Sushi</li><li>Barbecue</li><li>Mexican</li></ul>",
+                chisel.parse("* Sushi\n* Barbeque\n* Mexican\n")
+  end
+
+  def test_parse_text_in_unordered_list
+    skip
+    chisel = Chisel.new
+    assert
+  end
+
+  def test_parse_text_in_ordered_list
+    skip
+    chisel = Chisel.new
+    assert
+  end
+
+  def test_ordered_list_outputs_correctly
+    skip
+    chisel = Chisel.new
+    assert
   end
 
 end
